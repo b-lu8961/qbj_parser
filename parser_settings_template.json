@@ -1,0 +1,40 @@
+{
+	"tournament_name": "example tournament",
+	"tossups_per_match": 20,
+	"pools": [
+		{
+			"name": "pool 1",
+			"teams": [
+				"team 1",
+				"team 2",
+				"team 3",
+				"team 4"
+			]
+		},
+		{
+			"name": "pool 2",
+			"teams": [
+				"team 5",
+				"team 6",
+				"team 7",
+				"team 8"
+			]
+		}
+	],
+	"bonus_tracking_help": "if Automatic then 1; if None then 0; if Manual Hrd, Auto Pts then 2; if Manual with Bouncebacks then 3",
+	"bonus_tracking": 1,
+	"track_powers_negs": true,
+	"track_tuh": true,
+	"sort_players_by_pts_tuh": false,
+	"round_rep": true,
+	"team_standings": true,
+	"ind_standings": true,
+	"scoreboard": true,
+	"team_detail": true,
+	"ind_detail": true,
+	"stat_key": true,
+	"ftp_host_addr": "",
+	"ftp_username": "",
+	"ftp_dir": "",
+	"ftp_base_filename": ""
+}
