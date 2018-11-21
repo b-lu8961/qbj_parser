@@ -167,7 +167,7 @@ def assign_pools(settings, team_list):
 				if team_found:
 					break
 			if 'pool' not in team:
-				print('Pools used, but team ' + team['name'] + ' is not assigned to a pool')
+				print('Pools used, but team ' + team['name'] + ' is not assigned to a pool. Have you tried escaping quote characters?')
 				sys.exit(1)
 
 # Prints/writes to file based on boolean value: 1 if true, 0 if false
@@ -236,7 +236,7 @@ for item in objects:
 
 assign_pools(settings, teams)
 		
-sqbs_file = open(tournament['name'].replace(' ', '_') + '.sqbs', 'w')
+sqbs_file = open(settings['tournament_name'].replace(' ', '_') + '.sqbs', 'w')
 print(len(teams), file=sqbs_file)
 
 for team in teams:
@@ -362,4 +362,4 @@ print(len(teams), file=sqbs_file) #The number of teams
 for team in teams: #For each team according to its index, 1 if it is an exhibition team, otherwise 0. (This leaf node in our documentation represents as many lines as there are teams.)
 	print(0, file=sqbs_file)
 	
-	
+sqbs_file.close()
