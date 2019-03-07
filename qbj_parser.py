@@ -211,18 +211,18 @@ if len(sys.argv) != 3:
 	sys.exit(1)
 	
 with open(sys.argv[1]) as qbj_file:
-	data = json.load(qbj_file)
+	qbj_data = json.load(qbj_file)
 with open(sys.argv[2]) as settings_file:
 	settings = json.load(settings_file)
 
 # see https://www.qbwiki.com/wiki/SQBS_data_file
 # and http://schema.quizbowl.technology/
-objects = data['objects']
+qbj_objects = qbj_data['objects']
 
 teams = []
 matches = []
 
-for item in objects:
+for item in qbj_objects:
 	type = item['type']
 	if type == 'Tournament':
 		tournament = item
@@ -230,7 +230,7 @@ for item in objects:
 	elif type == 'Registration':
 		add_team(item, teams)
 	elif type == 'Match':
-		add_match(item, matches, settings['tossups_per_match'], tournament['scoring_rules']['bonuses_bounce_back'], tournament['scoring_rules']['maximum_players_per_team'])
+		add_match(item, matches, item['tossups_read'], tournament['scoring_rules']['bonuses_bounce_back'], tournament['scoring_rules']['maximum_players_per_team'])
 	else:
 		continue
 

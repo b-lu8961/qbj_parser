@@ -1,6 +1,5 @@
 {
 	"tournament_name": "example tournament",
-	"tossups_per_match": 20,
 	"pools": [
 		{
 			"name": "pool 1",
